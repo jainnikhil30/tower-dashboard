@@ -252,7 +252,7 @@
             {% for job in version_unstable_jobs %}
               <tr>
                 <td align="left">{{ job.display_name }}</td>
-                <td align="center"><a href="{{ job.url }}"><img src="{{ url_for('static', filename='yellow.png') }}"></img></a></td>
+                <td style="text-align: center"><a href="{{ job.url }}"><img src="{{ url_for('static', filename='yellow.png') }}"></img></a></td>
                 </td>
               </tr>
             {% endfor %}
@@ -282,7 +282,7 @@
             {% for job in version_failed_jobs %}
               <tr>
                 <td align="left">{{ job.display_name }}</td>
-                 <td align="center"><a href="{{ job.url }}"><img src="{{ url_for('static', filename='red.png') }}"></img></a></td>
+                 <td style="text-align: center"><a href="{{ job.url }}"><img src="{{ url_for('static', filename='red.png') }}"></img></a></td>
                 </td>
               </tr>
             {% endfor %}
@@ -320,24 +320,24 @@
                       <td align="left">{{ job.display_name }}</td>
                       {% if job.status == 'SUCCESS' %}
                         {% if job.freshness < 2 %}
-                        <td align="center"><a href="{{ job.url }}"><img src="{{ url_for('static', filename='green.png') }}"></img></a></td>
+                        <td style="text-align: center"><a href="{{ job.url }}"><img src="{{ url_for('static', filename='green.png') }}"></img></a></td>
                         {% else %}
-                        <td align="center"><a href="{{ job.url }}"><img style="opacity: 0.5" src="{{ url_for('static', filename='green.png') }}"></img></a></td>
+                        <td style="text-align: center"><a href="{{ job.url }}"><img style="opacity: 0.5" src="{{ url_for('static', filename='green.png') }}"></img></a></td>
                         {% endif %}
                       {% elif job.status == 'FAILURE' %}
                         {% if job.freshness < 2 %}
-                        <td align="center"><a href="{{ job.url }}"><img src="{{ url_for('static', filename='red.png') }}"></img></a></td>
+                        <td style="text-align: center"><a href="{{ job.url }}"><img src="{{ url_for('static', filename='red.png') }}"></img></a></td>
                         {% else %}
-                        <td align="center"><a href="{{ job.url }}"><img style="opacity: 0.5" src="{{ url_for('static', filename='red.png') }}"></img></a></td>
+                        <td style="text-align: center"><a href="{{ job.url }}"><img style="opacity: 0.5" src="{{ url_for('static', filename='red.png') }}"></img></a></td>
                         {% endif %}
                       {% elif job.status == 'UNSTABLE' %}
                         {% if job.freshness < 2 %}
-                        <td align="center"><a href="{{ job.url }}"><img src="{{ url_for('static', filename='yellow.png') }}"></img></a></td>
+                        <td style="text-align: center"><a href="{{ job.url }}"><img src="{{ url_for('static', filename='yellow.png') }}"></img></a></td>
                         {% else %}
-                        <td align="center"><a href="{{ job.url }}"><img style="opacity: 0.5" src="{{ url_for('static', filename='yellow.png') }}"></img></a></td>
+                        <td style="text-align: center"><a href="{{ job.url }}"><img style="opacity: 0.5" src="{{ url_for('static', filename='yellow.png') }}"></img></a></td>
                         {% endif %}
                       {% else %}
-                        <td align="center">
+                        <td style="text-align: center">
                         {% if job.url %}
                             <a href="{{ job.url }}"><img src="{{ url_for('static', filename='grey.png') }}"></img></a>
                         {% else %}
